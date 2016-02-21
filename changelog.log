@@ -1,0 +1,10 @@
+#2016-feb-17
+1. The fitting functions FitFuncsMu2PfBpoly2.mat is changed. In the functions
+y=ax^2+bx+c, if a<0, then use min(mu2) instead of the fitting function.
+Because I found in some cases where Pf2B is very small, if a<0, mu2 can be
+negative. But actually mu2 should be a high value.
+2. In cpmu2PfB.m, add two if sentences. if Pf2tol==1, and if Pf2B==0.
+3. SearchOptsub.m, add an if sentence. if OptPfix==1. And add paras.mu2=0 in
+the else sentence of ns2==0.
+4. In bench_compare_OneEp.m, changed the success threshold of selecting
+z_{src} from 0.9*Pfttl to Pfttl.
